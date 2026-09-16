@@ -1,0 +1,225 @@
+body{
+	font-family: "Montserrat", sans-serif;
+}
+
+header{
+	background: #BBBBBB;
+	padding: 20px 0;/* 20px cima/baixo e 0 dir/esq */
+}
+
+.caixa{
+	position: relative;
+	width: 940px;
+	margin: 0 auto;/*0 cima/baixo e auto dir/esq*/
+}
+
+nav{
+	position: absolute;
+	top: 110px;
+	right: 0;
+}
+
+/*POSITION
+ - STATIC:
+     * Posicionamento padrão de todo elemento HTML.
+     * É posicionado pelo canto superior esquerdo no 
+     corpo do documento.
+     * Não é possível alterar a posição.
+
+  - RELATIVE:
+     * Posição que é relativa àquela posição inicial.
+     * Pode aplicar top, left, e altera a posição com 
+     referência à posição inicial.
+
+   - ABSOLUTE:
+     * É um posicionamento absoluto em relação a outras
+     estruturas. Aquela que tiver mais próxima 
+     "position:relative" ou <html>
+     * Irá ignorar outros elementos e será posicionado a 
+     partir do canto esquerdo superior do documento, podendo até 
+     sobrepor eles.
+     * Pode utilizar as configurações de top e left.
+  */   
+
+nav li{
+	display: inline;
+	margin: 0 0 0 15px;
+}
+
+nav a{
+	text-decoration: none; /*remove o sublinhado*/
+	color: #000000;
+	font-size: 22px;
+	font-weight: bold; /*negrito*/
+	text-transform: uppercase;
+}
+
+/*PSEUDO-CLASSES CSS
+	- hover: quando o usuário passa o cursor do mouse
+	sobre um elemento.
+	- active: quando um elemento está sendo ativado. 
+*/
+
+nav a:hover { /*qdo o mouse estiver sobre*/
+	color: #C78C19;
+	text-decoration: underline;
+}
+
+.produtos{
+	width: 940px;
+	margin: 0 auto;/*0 cima/baixo auto esq/dir*/
+	padding: 50px 0;/*50px cima/baixo e 0 lados*/
+}
+
+.produtos li{
+	display: inline-block;
+	text-align: center;
+	width: 30%;
+	background: #CCCCCC;
+	margin: 0 1.5%; /*0px cima/baixo e 1.5% lados*/
+	padding: 30px 20px; /*30px cima/baixo e 20px lados*/
+	box-sizing: border-box;/*considera o espaçamento interno
+	(padding) como parte do width que é a largura fixa, assim
+	não desconfigura quando usa o padding com px e % */
+
+	/*Bordas*/
+	border-style: solid; /*solid, dashed,dotted*/
+	border-width: 2px;
+	border-color: #000000;
+	border-radius: 10px;
+} 
+
+.produtos li:hover {
+	border-color: #C78C19;
+	/*font-size: 40px; não acontece o que se espera
+	pois outros estilos estão definidos*/
+}
+
+.produtos li:active{ /*Comportamento quando o mouse está sendo clicaco*/
+	border-color: #088C19;	
+}
+
+.produtos h2{
+	font-size: 30px;
+	font-weight: bold;
+}
+
+.produto-img{
+	border-radius: 10px;
+}
+
+.produto-descricao{
+	font-size: 18px;	
+}
+
+.produto-preco{
+	font-size: 22px;
+	font-weight: bold;
+	margin: 10px 0 0;/*10px cima, 0 baixo, 0 lados	*/
+	/*margin-top: 10px;*/
+}
+
+footer {
+	text-align: center;
+	background: url("imagens\\bg.jpg");
+	padding: 40px 0;/*40px cima/baixo e 0 lados*/
+}
+
+.copyright {
+	color: #FFFFFF; /*branca*/
+	font-size: 13px;
+	margin: 20px 0 0;/*20px cima, 0 para o resto*/
+}
+
+main{
+	width: 940px;
+	margin: 0 auto;
+}
+
+form{
+	margin: 40px 0; /*cima e baixo, laterais*/
+}
+
+form label, form legend{
+	display: block;
+	font-size: 20px;
+	margin: 0 0 10px; /*cima, baixo, lados*/
+}
+
+/*form input, form textarea{*/
+.input-padrao{	
+	display: block;
+	margin: 0 0 20px;
+	padding: 10px 25px;
+	width: 50%;
+}
+
+.checkbox{
+	margin: 20px 0;
+}
+
+/* HIERARQUIA NO CSS
+
+Forças dos seletores
+ id = 100
+ class = 10
+ tag = 1
+
+exemplos:
+ p = 1
+ form p = 1 + 1= 2
+ .teste = 10
+ p.teste = 1 + 10 = 11 
+ #teste = 100
+
+ a única coisa que tem força maior que os seletores css é a 
+ aplicação do CSS inline no html.
+
+ style inline = 1000
+ <p class="teste" id="teste" style="color: purple">Como prefere o nosso contato?</p>
+*/
+
+.enviar{
+	width: 40%;
+	padding: 15px 0;
+	background: orange;
+	color: white;
+	font-weight: bold;
+	font-size: 18px;
+	border: none;
+	border-radius: 5px;
+	/*transition: 1s background;*/
+	/*CSS3 permite trabalhar com transições que antes só era
+	possível no javascript*/
+	transition: 1s all;
+	cursor: pointer;
+}
+
+.enviar:hover{ 
+	background: green;
+	/*transform: rotate(0.2deg);*/
+	/*a propriedade transform do CSS3 permite adicionar uma série
+	de efeitos como aumento, rotação, etc*/
+	transform: scale(1.01);
+	/*transform:  rotate(5.2deg) scale(1.01);  utiliza % como referência 1.2 = 120%
+		1.05= 105%
+		para que mais de um efeito seja aplicado, deverá colocá-los
+		na mesma linha da propriedade transform. Se colocar em linhas
+		diferentes, apenas o último é executado.*/
+}
+
+table{
+	margin: 20px 0 40px;
+}
+
+thead{
+	background: #555555;
+	color: white;
+	font-weight: bold;
+}
+
+td, th{
+	border: 1px solid #000000;
+	padding: 8px 15px;
+}  
+
